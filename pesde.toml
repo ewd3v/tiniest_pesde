@@ -1,4 +1,4 @@
-name = "ewd3v/tiniest"
+name = "ewdev/tiniest"
 version = "0.0.0"
 description = "A minimal, portable testing library for Luau"
 authors = ["Daniel P H Fox (https://phfox.net/)", "EwDev (https://ewdev.net/)"]
