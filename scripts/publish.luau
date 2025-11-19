@@ -21,7 +21,7 @@ writePackage(
 
 pcall(function()
 	require("./build")
-	process.exec("pesde", { "publish" }, {
+	process.exec("pesde", { "publish", "--yes" }, {
 		cwd = "dist",
 		shell = true,
 		stdio = "forward",
