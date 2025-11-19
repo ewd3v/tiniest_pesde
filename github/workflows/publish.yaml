@@ -1,0 +1,35 @@
+name: Publish Package
+
+on:
+  push:
+    branches:
+      - main
+
+defaults:
+  run:
+    shell: bash
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    name: Publish Package
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - name: Setup pesde
+        uses: ewd3v/setup-pesde@v0.1.1
+        with:
+          pesde_token: ${{ secrets.PESDE_TOKEN || github.token }}
+
+      - name: Run tests
+        run: pesde run test
+
+      - name: Publish package to pesde
+        run: pesde run publish
