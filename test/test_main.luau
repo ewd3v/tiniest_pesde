@@ -27,7 +27,7 @@ local tests = tiniest.collect_tests(function()
 	-- describe_from_file("tiniest_time")
 	describe_from_file("tiniest")
 end)
-tiniest.run_tests(tests, {})
+local result = tiniest.run_tests(tests, {})
 
 if SAVE_SNAPSHOTS then
 	print()
@@ -38,4 +38,8 @@ if SAVE_SNAPSHOTS then
 	print()
 	print(string.rep("💾 🛠️  ", 12))
 	print()
+end
+
+if result.status_tally.fail > 0 then
+	require("@lune/process").exit(1)
 end
