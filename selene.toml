@@ -1,0 +1,10 @@
+std = "std+luau"
+exclude = ["*_packages/*", ".pesde/*", "dist*/*", "types/*"]
+
+[config]
+global_usage = { ignore_pattern = "^RUNTIME$" } # Ignore the global value that will be injected by darklua
+
+[lints]
+shadowing = "allow"
+multiple_statements = "allow"
+bad_string_escape = "allow"

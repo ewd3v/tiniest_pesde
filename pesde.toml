@@ -1,9 +1,16 @@
 name = "ewd3v/tiniest"
-version = "0.1.0"
+version = "0.0.0"
 description = "A minimal, portable testing library for Luau"
 authors = ["Daniel P H Fox (https://phfox.net/)", "EwDev (https://ewdev.net/)"]
 repository = "https://github.com/ewd3v/tiniest_pesde"
-license = "BSD-3-Clause-Modification"
+license = "BSD-3-Clause"
+includes = [
+    "pesde.toml",
+    "README.md",
+    "LICENSE",
+    "src/**/*.luau"
+]
+private = true # Prevent publishing source code that hasn't been processed with build script
 
 [engines]
 pesde = "^0.7.1"
@@ -11,6 +18,16 @@ lune = "^0.10.4"
 
 [target]
 environment = "luau"
+lib = "src/init.luau"
+
+[scripts]
+build = "scripts/build.luau"
+publish = "scripts/publish.luau"
+test = "test/test_main.luau"
 
 [indices]
 default = "https://github.com/pesde-pkg/index"
+
+[dev_dependencies]
+multitarget = { name = "ewdev/multitarget", version = "^0.4.2-rc.7", target = "lune" }
+darklua = { name = "pesde/darklua", version = "^0.17.2", target = "lune" }
