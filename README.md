@@ -1,3 +1,5 @@
+This is a fork of https://github.com/dphfox/tiniest to redistribute the package on [pesde](https://pesde.dev/).
+
 <h1>
 	<img src="github/logo.svg" alt="tiniest">
 </h1>
@@ -36,10 +38,9 @@ No installation needed!
 other. Drop them into your `lib` folder, keep the ones you need, and start using
 `tiniest` right away :)
 
-
 ## Usage
 
-> *🎨 The printed reports come with colour - try it in your terminal!*
+> _🎨 The printed reports come with colour - try it in your terminal!_
 
 Here's an example file written with `tiniest_for_lune`:
 
@@ -49,7 +50,7 @@ Here's an example file written with `tiniest_for_lune`:
 local tiniest = require("@tiniest_for_lune").configure({
 	snapshot_path = "./test/__snapshots__",
 	save_snapshots = true
-}) 
+})
 
 local function my_test_suite()
 	local describe = tiniest.describe
@@ -98,27 +99,27 @@ Failures look like this:
 
 ❌ some cool features ▸ it works
 Expectation not met
-   │ 
+   │
 16 │ expect(4).is(5)
-   │ 
+   │
 [string "test/test_main"]:16
 
 ❌ some cool features ▸ snapshots
 Snapshot does not match
-   │ 
+   │
 78 │ snapshot({
    │   ["bar"] = 2;
    │   ["foo"] = true;
    │   ["hello"] = "world";
    │ })
-   │ 
+   │
    │ -- snapshot on disk:
    │ snapshot({
    │   ["bar"] = 5;
    │   ["foo"] = false;
    │   ["hello"] = "earth";
    │ })
-   │ 
+   │
 [string "test/test_main"]:20
 
 ══════════════════════════════ Status of 2 test(s) ═════════════════════════════
