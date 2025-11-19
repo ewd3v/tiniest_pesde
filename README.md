@@ -32,9 +32,12 @@ Lune, or pick and mix your own modules and plugins!
 
 ## Installation
 
-No installation needed!
+Run `pesde add ewdev/tiniest --dev`.  
+It's then recommended that you go into your `pesde.toml` and switch the version to use an exact version (i.e switching `^0.0.0` to `=0.0.0`).
+This is because new versions may come with breaking changes.
 
-`tiniest` is distributed as a set of portable Luau files that sit next to each
+As an alternative, you can go to https://github.com/dphfox/tiniest,
+where `tiniest` is distributed as a set of portable Luau files that sit next to each
 other. Drop them into your `lib` folder, keep the ones you need, and start using
 `tiniest` right away :)
 
