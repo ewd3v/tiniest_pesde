@@ -80,7 +80,6 @@ return function(tiniest_actual: tiniest_actual)
 			end))
 		end)
 
-		--[[
 		test("duplicate names at the same level", function()
 			expect(function()
 				tiniest.collect_tests(function()
@@ -97,7 +96,6 @@ return function(tiniest_actual: tiniest_actual)
 				end)
 			end).fails_with("duplicate")
 		end)
-		]]
 	end)
 	
 	describe("test running", function()
