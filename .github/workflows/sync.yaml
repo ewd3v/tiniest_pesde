@@ -1,0 +1,42 @@
+name: Sync upstream
+
+on:
+  schedule:
+    # Runs at 00:10 UTC every day
+    - cron: "10 0 * * *"
+
+defaults:
+  run:
+    shell: bash
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    name: Sync upstream
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - name: Add upstream remote
+        run: |
+          git remote add upstream https://github.com/dphfox/tiniest
+          git remote set-url --push upstream DISABLE
+
+      - name: Fetch upstream
+        run: git fetch upstream
+
+      - name: Merge upstream
+        run: git merge --commit upstream/main
+
+      - name: Abort merge conflicts (if any)
+        run: git merge --abort
+        continue-on-error: true
+
+      - name: Push to origin
+        run: git push origin
