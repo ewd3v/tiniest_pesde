@@ -1,6 +1,7 @@
 name: Sync upstream
 
 on:
+  workflow_dispatch:
   schedule:
     # Runs at 00:10 UTC every day
     - cron: "10 0 * * *"
