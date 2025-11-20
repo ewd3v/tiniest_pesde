@@ -36,7 +36,7 @@ jobs:
         run: git fetch upstream
 
       - name: Merge upstream
-        run: git merge --commit --allow-unrelated-histories upstream/main
+        run: git merge --commit upstream/main
 
       - name: Abort merge conflicts (if any)
         run: git merge --abort
